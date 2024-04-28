@@ -2,6 +2,8 @@ package net.juyoh.wetrooms;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.juyoh.wetrooms.block.ModBlocks;
+import net.juyoh.wetrooms.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,6 +14,8 @@ public class WetRooms implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-		LOGGER.info("Hello Fabric world!");
+		ModItemGroups.registerItemGroups();
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 }
