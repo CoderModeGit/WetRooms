@@ -1,9 +1,19 @@
 {
   "item.wetrooms.rubberduck": "Rubber Duck",
+  "item.wetrooms.latex_bucket": "Latex Bucket",
 
   "itemgroup.wetrooms": "The Wetrooms",
 
   "block.wetrooms.bleached_tiles": "Bleached Tiles",
   "block.wetrooms.obsidian_tiles": "Obsidian Tiles",
-  "block.wetrooms.unnatural_light": "Unnatural Light"
+  "block.wetrooms.unnatural_light": "Unnatural Light",
+  "block.wetrooms.solid_metal": "Solid Metal",
+
+  "block.wetrooms.quartz_door": "Quartz Door",
+  "block.wetrooms.bleached_door": "Bleached Door",
+  "block.wetrooms.obsidian_tiles_stairs": "Obsidian Tiles Stairs",
+  "block.wetrooms.bleached_tiles_stairs": "Bleached Tiles Stairs",
+  "block.wetrooms.obsidian_tiles_slab": "Obsidian Tiles Slab",
+  "block.wetrooms.bleached_tiles_slab": "Bleached Tiles Slab",
+  "block.wetrooms.metal_railing": "Metal Railing"
 }

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "wetrooms:block/obsidian_tiles_slab"
+    },
+    "type=double": {
+      "model": "wetrooms:block/obsidian_tiles"
+    },
+    "type=top": {
+      "model": "wetrooms:block/obsidian_tiles_slab_top"
+    }
+  }
+}

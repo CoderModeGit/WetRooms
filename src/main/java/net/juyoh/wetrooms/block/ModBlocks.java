@@ -17,10 +17,27 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS)));
     public static final Block OBSIDIAN_TILES = registerBlock("obsidian_tiles",
             new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN)));
+    public static final Block SOLID_METAL = registerBlock("solid_metal",
+            new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
     public static final Block UNNATURAL_LIGHT = registerBlock("unnatural_light",
-            new Block(FabricBlockSettings.copyOf(Blocks.GLOWSTONE).mapColor(MapColor.WHITE).luminance(0).postProcess(Blocks::always)));
-    public static final Block EMMISION_LINEAR = registerBlock("emmision_linear",
-            new BakedLightingBlock(FabricBlockSettings.create().sounds(BlockSoundGroup.SHROOMLIGHT).noCollision().nonOpaque().replaceable()));
+            new Block(FabricBlockSettings.copyOf(Blocks.GLOWSTONE).mapColor(MapColor.WHITE).luminance(16)));
+    public static final Block BLEACHED_TILES_STAIRS = registerBlock("bleached_tiles_stairs",
+            new StairsBlock(ModBlocks.BLEACHED_TILES.getDefaultState(), FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS)));
+    public static final Block OBSIDIAN_TILES_STAIRS = registerBlock("obsidian_tiles_stairs",
+            new StairsBlock(ModBlocks.OBSIDIAN_TILES.getDefaultState(), FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS)));
+    public static final Block BLEACHED_TILES_SLAB = registerBlock("bleached_tiles_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS)));
+    public static final Block OBSIDIAN_TILES_SLAB = registerBlock("obsidian_tiles_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS)));
+    public static final Block QUARTZ_DOOR = registerBlock("quartz_door",
+            new DoorBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS), BlockSetType.OAK));
+    public static final Block BLEACHED_DOOR = registerBlock("bleached_door",
+            new DoorBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS), BlockSetType.IRON));
+    public static final Block METAL_RAILING = registerBlock("metal_railing",
+            new FenceBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+
+
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(WetRooms.MOD_ID, name), block);

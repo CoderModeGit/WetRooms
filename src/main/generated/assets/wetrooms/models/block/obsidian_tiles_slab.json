@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "wetrooms:block/obsidian_tiles",
+    "side": "wetrooms:block/obsidian_tiles",
+    "top": "wetrooms:block/obsidian_tiles"
+  }
+}

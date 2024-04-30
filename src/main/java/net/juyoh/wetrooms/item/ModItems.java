@@ -9,6 +9,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItems {
     public static final Item RUBBERDUCK = registerItem("rubberduck", new Item(new FabricItemSettings()));
+    public static final Item LATEX_BUCKET = registerItem("latex_bucket", new Item(new FabricItemSettings()));
 
 
 

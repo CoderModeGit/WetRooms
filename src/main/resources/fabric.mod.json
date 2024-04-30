@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "wetrooms",
 	"version": "${version}",
-	"name": "Wetrooms",
+	"name": "The Wetrooms",
 	"description": "Seemingly endless pools and unnatural rooms, welcome to the Wetrooms!",
 	"authors": [
 		"juyoh"
@@ -20,6 +20,9 @@
 		],
 		"client": [
 			"net.juyoh.wetrooms.WetRoomsClient"
+		],
+		"datagen": [
+			"net.juyoh.wetrooms.WetRoomsDataGenerator"
 		],
 		"fabric-datagen": [
 			"net.juyoh.wetrooms.WetRoomsDataGenerator"
