@@ -1,0 +1,5 @@
+// 1.20.1	2024-05-01T09:09:35.5283745	The Wetrooms/Tags for minecraft:block
+cd5e0eab8a7068fbfe6c1636e8acdcff5fd02c05 data\minecraft\tags\blocks\mineable\pickaxe.json
+8252fa548102d5b505d43b1df9239c587a290607 data\minecraft\tags\blocks\impermeable.json
+cb97834f385eb0cdb0a0c1c8b97562d91d7c0bc4 data\minecraft\tags\blocks\fences.json
+cb97834f385eb0cdb0a0c1c8b97562d91d7c0bc4 data\minecraft\tags\blocks\wooden_fences.json

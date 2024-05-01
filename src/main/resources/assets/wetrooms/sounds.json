@@ -1,0 +1,12 @@
+{
+  "wetrooms_tiles_step": {
+    "subtitle": "sounds.wetrooms.tile_footstep",
+    "sounds": [
+      "wetrooms:tile1",
+      "wetrooms:tile2",
+      "wetrooms:tile3",
+      "wetrooms:tile4",
+      "wetrooms:tile5"
+    ]
+  }
+}

@@ -15,5 +15,7 @@
   "block.wetrooms.bleached_tiles_stairs": "Bleached Tiles Stairs",
   "block.wetrooms.obsidian_tiles_slab": "Obsidian Tiles Slab",
   "block.wetrooms.bleached_tiles_slab": "Bleached Tiles Slab",
-  "block.wetrooms.metal_railing": "Metal Railing"
+  "block.wetrooms.metal_railing": "Metal Railing",
+
+  "sounds.wetrooms.tile_footstep": "Loud Footsteps"
 }
