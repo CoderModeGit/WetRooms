@@ -1,6 +1,7 @@
 {
   "item.wetrooms.rubberduck": "Rubber Duck",
   "item.wetrooms.latex_bucket": "Latex Bucket",
+  "item.wetrooms.epsom_salt": "Epsom Salt",
 
   "itemgroup.wetrooms": "The Wetrooms",
 
@@ -8,6 +9,9 @@
   "block.wetrooms.obsidian_tiles": "Obsidian Tiles",
   "block.wetrooms.unnatural_light": "Unnatural Light",
   "block.wetrooms.solid_metal": "Solid Metal",
+  "block.wetrooms.metal_ladder": "Metal Ladder",
+  "block.wetrooms.metal_ladder_top": "Metal Ladder Top",
+  "block.wetrooms.epsomite_ore": "Epsomite Ore",
 
   "block.wetrooms.quartz_door": "Quartz Door",
   "block.wetrooms.bleached_door": "Bleached Door",
@@ -15,7 +19,16 @@
   "block.wetrooms.bleached_tiles_stairs": "Bleached Tiles Stairs",
   "block.wetrooms.obsidian_tiles_slab": "Obsidian Tiles Slab",
   "block.wetrooms.bleached_tiles_slab": "Bleached Tiles Slab",
+  "block.wetrooms.bleached_tiles_wall": "Bleached Tiles Wall",
   "block.wetrooms.metal_railing": "Metal Railing",
+
+  "block.wetrooms.rubber_log": "Rubber Log",
+  "block.wetrooms.stripped_rubber_log": "Stripped Rubber Log",
+  "block.wetrooms.stripped_rubber_wood": "Stripped Rubber Wood",
+  "block.wetrooms.rubber_wood": "Rubber Wood",
+  "block.wetrooms.rubber_planks": "Rubber Planks",
+  "block.wetrooms.rubber_leaves": "Rubber Leaves",
+  "block.wetrooms.rubber_sapling": "Rubber Sapling",
 
   "sounds.wetrooms.tile_footstep": "Loud Footsteps"
 }

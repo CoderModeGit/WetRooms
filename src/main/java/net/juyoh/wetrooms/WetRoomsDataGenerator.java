@@ -3,6 +3,12 @@ package net.juyoh.wetrooms;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.juyoh.wetrooms.datagen.*;
+import net.juyoh.wetrooms.world.ModConfiguredFeatures;
+import net.juyoh.wetrooms.world.ModPlacedFeatures;
+import net.juyoh.wetrooms.world.biome.ModBiomes;
+import net.juyoh.wetrooms.world.dimension.ModDimensions;
+import net.minecraft.registry.RegistryBuilder;
+import net.minecraft.registry.RegistryKeys;
 
 public class WetRoomsDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -14,5 +20,14 @@ public class WetRoomsDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
+		pack.addProvider(ModWorldGenerator::new);
+	}
+
+	@Override
+	public void buildRegistry(RegistryBuilder registryBuilder) {
+		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::boostrap);
+		registryBuilder.addRegistry(RegistryKeys.DIMENSION_TYPE, ModDimensions::bootstrapType);
 	}
 }

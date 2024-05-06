@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_epsomite_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "wetrooms:epsomite_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:epsom_salt_from_blasting_epsomite_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_epsomite_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:epsom_salt_from_blasting_epsomite_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

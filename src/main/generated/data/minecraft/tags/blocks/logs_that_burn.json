@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "wetrooms:rubber_log",
+    "wetrooms:stripped_rubber_log",
+    "wetrooms:rubber_wood",
+    "wetrooms:stripped_rubber_wood"
+  ]
+}

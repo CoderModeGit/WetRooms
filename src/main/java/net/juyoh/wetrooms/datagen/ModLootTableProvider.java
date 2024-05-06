@@ -21,5 +21,15 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.OBSIDIAN_TILES_STAIRS);
         addDrop(ModBlocks.UNNATURAL_LIGHT);
         addDrop(ModBlocks.SOLID_METAL);
+        addDrop(ModBlocks.EPSOMITE_ORE);
+
+        addDrop(ModBlocks.RUBBER_LOG);
+        addDrop(ModBlocks.STRIPPED_RUBBER_LOG);
+        addDrop(ModBlocks.STRIPPED_RUBBER_WOOD);
+        addDrop(ModBlocks.RUBBER_WOOD);
+        addDrop(ModBlocks.RUBBER_PLANKS);
+        addDrop(ModBlocks.RUBBER_SAPLING);
+
+        addDrop(ModBlocks.RUBBER_LEAVES, leavesDrops(ModBlocks.RUBBER_LEAVES, ModBlocks.RUBBER_SAPLING, 0.025f));
     }
 }

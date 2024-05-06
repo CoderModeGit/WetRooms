@@ -1,0 +1,18 @@
+{
+  "type": "wetrooms:wetrooms_type",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "wetrooms:wetrooms_biome",
+      "lakes": false,
+      "features": false,
+      "layers": [
+        {
+          "block": "minecraft:stone",
+          "height": 1
+        }
+      ],
+      "structure_overrides": "minecraft:villages"
+    }
+  }
+}

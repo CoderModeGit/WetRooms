@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "wetrooms:block/rubber_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "wetrooms:block/rubber_log"
+    },
+    "sap=true": {
+      "model": "wetrooms:block/rubber_log"
+    },
+    "axis=z": {
+      "model": "wetrooms:block/rubber_log_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -19,6 +19,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.BLEACHED_TILES);
                         entries.add(ModBlocks.BLEACHED_TILES_STAIRS);
                         entries.add(ModBlocks.BLEACHED_TILES_SLAB);
+                        entries.add(ModBlocks.BLEACHED_TILES_WALL);
                         entries.add(ModBlocks.BLEACHED_DOOR);
                         entries.add(ModBlocks.QUARTZ_DOOR);
 
@@ -29,8 +30,22 @@ public class ModItemGroups {
                         entries.add(ModBlocks.UNNATURAL_LIGHT);
                         entries.add(ModBlocks.SOLID_METAL);
                         entries.add(ModBlocks.METAL_RAILING);
+                        entries.add(ModBlocks.METAL_LADDER);
+                        entries.add(ModBlocks.METAL_LADDER_TOP);
+                        entries.add(ModBlocks.VENT_BLOCK);
 
                         entries.add(ModItems.RUBBERDUCK);
+
+                        entries.add(ModBlocks.EPSOMITE_ORE);
+                        entries.add(ModItems.EPSOM_SALT);
+
+                        entries.add(ModBlocks.RUBBER_LOG);
+                        entries.add(ModBlocks.RUBBER_WOOD);
+                        entries.add(ModBlocks.RUBBER_PLANKS);
+                        entries.add(ModBlocks.STRIPPED_RUBBER_LOG);
+                        entries.add(ModBlocks.STRIPPED_RUBBER_WOOD);
+                        entries.add(ModBlocks.RUBBER_LEAVES);
+                        entries.add(ModBlocks.RUBBER_SAPLING);
                         entries.add(ModItems.LATEX_BUCKET);
                     }).build());
     public static void registerItemGroups() {

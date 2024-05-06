@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "wetrooms:block/rubber_log",
+    "side": "wetrooms:block/rubber_log"
+  }
+}

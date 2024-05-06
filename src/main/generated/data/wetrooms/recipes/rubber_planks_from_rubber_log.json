@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "rubber",
+  "ingredients": [
+    {
+      "item": "wetrooms:rubber_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "wetrooms:rubber_planks"
+  }
+}

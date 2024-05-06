@@ -3,14 +3,14 @@ package net.juyoh.wetrooms.block;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.juyoh.wetrooms.WetRooms;
-import net.juyoh.wetrooms.block.custom.BakedLightingBlock;
+import net.juyoh.wetrooms.block.custom.VentBlock;
 import net.juyoh.wetrooms.sound.ModSounds;
+import net.juyoh.wetrooms.world.tree.RubberSaplingGenerator;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
 public class ModBlocks {
@@ -28,14 +28,39 @@ public class ModBlocks {
             new StairsBlock(ModBlocks.OBSIDIAN_TILES.getDefaultState(), FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS).sounds(ModSounds.WETROOMS_TILE_SOUNDS)));
     public static final Block BLEACHED_TILES_SLAB = registerBlock("bleached_tiles_slab",
             new SlabBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS).sounds(ModSounds.WETROOMS_TILE_SOUNDS)));
+    public static final Block BLEACHED_TILES_WALL = registerBlock("bleached_tiles_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS).sounds(ModSounds.WETROOMS_TILE_SOUNDS)));
     public static final Block OBSIDIAN_TILES_SLAB = registerBlock("obsidian_tiles_slab",
             new SlabBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS).sounds(ModSounds.WETROOMS_TILE_SOUNDS)));
+
     public static final Block QUARTZ_DOOR = registerBlock("quartz_door",
             new DoorBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS), BlockSetType.OAK));
     public static final Block BLEACHED_DOOR = registerBlock("bleached_door",
             new DoorBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS), BlockSetType.IRON));
     public static final Block METAL_RAILING = registerBlock("metal_railing",
             new FenceBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+    public static final Block METAL_LADDER = registerBlock("metal_ladder",
+            new LadderBlock(FabricBlockSettings.copyOf(Blocks.LADDER)));
+    public static final Block METAL_LADDER_TOP = registerBlock("metal_ladder_top",
+            new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).noCollision()));
+    public static final Block VENT_BLOCK = registerBlock("vent",
+            new VentBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).noCollision()));
+    public static final Block EPSOMITE_ORE = registerBlock("epsomite_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.COAL_ORE)));
+    public static final Block RUBBER_LOG = registerBlock("rubber_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).strength(4f)));
+    public static final Block RUBBER_WOOD = registerBlock("rubber_wood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4f)));
+    public static final Block STRIPPED_RUBBER_LOG = registerBlock("stripped_rubber_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG).strength(4f)));
+    public static final Block STRIPPED_RUBBER_WOOD = registerBlock("stripped_rubber_wood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD).strength(4f)));
+    public static final Block RUBBER_PLANKS = registerBlock("rubber_planks",
+            new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(4f)));
+    public static final Block RUBBER_LEAVES = registerBlock("rubber_leaves",
+            new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).nonOpaque()));
+    public static final Block RUBBER_SAPLING = registerBlock("rubber_sapling",
+            new SaplingBlock(new RubberSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
 
 
 

@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.juyoh.wetrooms.block.ModBlocks;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -26,7 +27,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BLEACHED_TILES_STAIRS)
                 .add(ModBlocks.BLEACHED_TILES)
                 .add(ModBlocks.BLEACHED_DOOR)
+                .add(ModBlocks.EPSOMITE_ORE)
                 .add(ModBlocks.SOLID_METAL);
+
 
         getOrCreateTagBuilder(BlockTags.IMPERMEABLE)
                 .add(ModBlocks.QUARTZ_DOOR);
@@ -34,6 +37,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.METAL_RAILING);
         getOrCreateTagBuilder(BlockTags.WOODEN_FENCES)
                 .add(ModBlocks.METAL_RAILING);
+
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.RUBBER_LOG)
+                .add(ModBlocks.STRIPPED_RUBBER_LOG)
+                .add(ModBlocks.RUBBER_WOOD)
+                .add(ModBlocks.STRIPPED_RUBBER_WOOD);
+        getOrCreateTagBuilder(BlockTags.CLIMBABLE)
+                .add(ModBlocks.METAL_LADDER);
 
     }
 }
