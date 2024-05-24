@@ -1,9 +1,9 @@
 {
   "variants": {
-    "facing=north": { "model": "wetrooms:block/vent_north", "uvlock": true },
-    "facing=east":  { "model": "wetrooms:block/vent_east", "y":  90, "uvlock": true },
-    "facing=south": { "model": "wetrooms:block/vent_south", "y": 180, "uvlock": true },
-    "facing=west":  { "model": "wetrooms:block/vent_west", "y": 270, "uvlock": true }
+    "facing=north": { "model": "wetrooms:block/vent_south", "uvlock": true },
+    "facing=east":  { "model": "wetrooms:block/vent_west", "uvlock": true },
+    "facing=south": { "model": "wetrooms:block/vent_north", "uvlock": true },
+    "facing=west":  { "model": "wetrooms:block/vent_east", "uvlock": true }
   }
 }
 

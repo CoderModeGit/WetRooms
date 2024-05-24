@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "e": {
+      "item": "wetrooms:epsom_salt"
+    },
+    "s": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    "sss",
+    "ses",
+    "sss"
+  ],
+  "result": {
+    "item": "wetrooms:washed_stone"
+  },
+  "show_notification": true
+}

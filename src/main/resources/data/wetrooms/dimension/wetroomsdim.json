@@ -6,12 +6,7 @@
       "biome": "wetrooms:wetrooms_biome",
       "lakes": false,
       "features": false,
-      "layers": [
-        {
-          "block": "minecraft:stone",
-          "height": 1
-        }
-      ],
+      "layers": [],
       "structure_overrides": "minecraft:villages"
     }
   }

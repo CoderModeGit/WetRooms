@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "b": {
+      "item": "wetrooms:solid_metal"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "bib",
+    "bib"
+  ],
+  "result": {
+    "item": "wetrooms:metal_railing"
+  },
+  "show_notification": true
+}

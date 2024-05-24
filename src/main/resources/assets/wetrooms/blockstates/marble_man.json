@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "level=1": { "model": "wetrooms:block/marble_man_escape", "uvlock": false },
+    "level=2":  { "model": "wetrooms:block/marble_man_sit1", "uvlock": false },
+    "level=3": { "model": "wetrooms:block/marble_man_sit2", "uvlock": false },
+    "level=4":  { "model": "wetrooms:block/marble_man_sit3", "uvlock": false },
+    "level=5": { "model": "wetrooms:block/marble_man_sit4", "uvlock": false }
+  }
+}
+

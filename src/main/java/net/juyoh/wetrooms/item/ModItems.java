@@ -8,8 +8,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-    public static final Item RUBBERDUCK = registerItem("rubberduck", new Item(new FabricItemSettings()));
-    public static final Item LATEX_BUCKET = registerItem("latex_bucket", new Item(new FabricItemSettings()));
+    public static final Item RUBBERDUCK = registerItem("rubberduck", new Item(new FabricItemSettings().maxCount(1)));
+    public static final Item LATEX_BUCKET = registerItem("latex_bucket", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item EPSOM_SALT = registerItem("epsom_salt", new Item(new FabricItemSettings()));
 
 

@@ -1,12 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bleached_tiles_slab": {
+    "has_epsom_salt": {
       "conditions": {
         "items": [
           {
             "items": [
-              "wetrooms:bleached_tiles_slab"
+              "wetrooms:epsom_salt"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_obsidian": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:obsidian"
             ]
           }
         ]
@@ -22,7 +34,8 @@
   },
   "requirements": [
     [
-      "has_bleached_tiles_slab",
+      "has_epsom_salt",
+      "has_obsidian",
       "has_the_recipe"
     ]
   ],

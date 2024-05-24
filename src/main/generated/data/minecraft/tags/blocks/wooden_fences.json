@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "wetrooms:rubber_planks_fence",
     "wetrooms:metal_railing"
   ]
 }

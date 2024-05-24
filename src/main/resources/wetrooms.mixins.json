@@ -3,7 +3,9 @@
 	"package": "net.juyoh.wetrooms.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"ModEntityDataSaverMixin",
+		"PlayerWalkMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

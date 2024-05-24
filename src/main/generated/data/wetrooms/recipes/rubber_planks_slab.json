@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "wetrooms:obsidian_tiles_slab"
+      "item": "wetrooms:rubber_planks"
     }
   },
   "pattern": [
@@ -11,7 +11,7 @@
   ],
   "result": {
     "count": 6,
-    "item": "wetrooms:obsidian_tiles"
+    "item": "wetrooms:rubber_planks_slab"
   },
   "show_notification": true
 }

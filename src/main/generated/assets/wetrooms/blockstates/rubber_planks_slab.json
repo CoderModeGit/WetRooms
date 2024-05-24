@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "wetrooms:block/rubber_planks_slab"
+    },
+    "type=double": {
+      "model": "wetrooms:block/rubber_planks"
+    },
+    "type=top": {
+      "model": "wetrooms:block/rubber_planks_slab_top"
+    }
+  }
+}

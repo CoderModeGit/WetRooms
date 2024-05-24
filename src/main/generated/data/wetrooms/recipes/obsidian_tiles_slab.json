@@ -3,15 +3,15 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "wetrooms:solid_metal"
+      "item": "wetrooms:obsidian_tiles"
     }
   },
   "pattern": [
-    "##",
-    "##"
+    "###"
   ],
   "result": {
-    "item": "minecraft:iron_block"
+    "count": 6,
+    "item": "wetrooms:obsidian_tiles_slab"
   },
   "show_notification": true
 }

@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "cracked=false": { "model": "wetrooms:block/clock", "uvlock": true }
+  }
+}
+

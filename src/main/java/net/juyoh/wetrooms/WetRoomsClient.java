@@ -12,5 +12,7 @@ public class WetRoomsClient implements ClientModInitializer{
         WetRooms.LOGGER.info("client init");
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RUBBER_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RUBBER_SAPLING, RenderLayer.getCutout());
+        //BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PLASTIC_CHAIR, RenderLayer.getCutout());
+
     }
 }

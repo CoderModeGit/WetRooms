@@ -36,7 +36,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.FENCES)
                 .add(ModBlocks.METAL_RAILING);
         getOrCreateTagBuilder(BlockTags.WOODEN_FENCES)
+                .add(ModBlocks.RUBBER_PLANKS_FENCE)
                 .add(ModBlocks.METAL_RAILING);
+
 
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.RUBBER_LOG)

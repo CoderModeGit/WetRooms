@@ -12,6 +12,7 @@
   "block.wetrooms.metal_ladder": "Metal Ladder",
   "block.wetrooms.metal_ladder_top": "Metal Ladder Top",
   "block.wetrooms.epsomite_ore": "Epsomite Ore",
+  "block.wetrooms.washed_stone": "Washed Stone",
 
   "block.wetrooms.quartz_door": "Quartz Door",
   "block.wetrooms.bleached_door": "Bleached Door",
@@ -21,12 +22,18 @@
   "block.wetrooms.bleached_tiles_slab": "Bleached Tiles Slab",
   "block.wetrooms.bleached_tiles_wall": "Bleached Tiles Wall",
   "block.wetrooms.metal_railing": "Metal Railing",
+  "block.wetrooms.plastic_chair": "Plastic Chair",
+  "block.wetrooms.vent": "Wall Vent",
+  "block.wetrooms.marble_man": "Marble Man",
 
   "block.wetrooms.rubber_log": "Rubber Log",
   "block.wetrooms.stripped_rubber_log": "Stripped Rubber Log",
   "block.wetrooms.stripped_rubber_wood": "Stripped Rubber Wood",
   "block.wetrooms.rubber_wood": "Rubber Wood",
   "block.wetrooms.rubber_planks": "Rubber Planks",
+  "block.wetrooms.rubber_planks_stairs": "Rubber Stairs",
+  "block.wetrooms.rubber_planks_slab": "Rubber Slab",
+  "block.wetrooms.rubber_planks_fence": "Rubber Fence",
   "block.wetrooms.rubber_leaves": "Rubber Leaves",
   "block.wetrooms.rubber_sapling": "Rubber Sapling",
 

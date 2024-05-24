@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_obsidian_tiles_slab": {
+    "has_iron_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "wetrooms:obsidian_tiles_slab"
+              "minecraft:iron_block"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "wetrooms:obsidian_tiles"
+        "recipe": "wetrooms:solid_metal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_obsidian_tiles_slab",
+      "has_iron_block",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "wetrooms:obsidian_tiles"
+      "wetrooms:solid_metal"
     ]
   },
   "sends_telemetry_event": false

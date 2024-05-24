@@ -2,15 +2,19 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "wetrooms:bleached_tiles_slab"
+    "o": {
+      "item": "minecraft:obsidian"
+    },
+    "s": {
+      "item": "wetrooms:epsom_salt"
     }
   },
   "pattern": [
-    "###"
+    "sos",
+    "oso",
+    "sos"
   ],
   "result": {
-    "count": 6,
     "item": "wetrooms:bleached_tiles"
   },
   "show_notification": true
