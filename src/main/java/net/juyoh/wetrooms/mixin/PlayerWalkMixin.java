@@ -1,5 +1,6 @@
 package net.juyoh.wetrooms.mixin;
 
+import net.juyoh.wetrooms.WetRooms;
 import net.juyoh.wetrooms.event.PlayerWalkCallback;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.vehicle.MinecartEntity;
