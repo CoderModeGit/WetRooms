@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "north=false,south=true,east=false,west=false,up=false,down=false": { "model": "wetrooms:block/marble_north_south", "uvlock": true },
+    "north=true,south=false,east=false,west=false,up=false,down=false": { "model": "wetrooms:block/marble_south_north", "uvlock": true },
+    "north=true,south=true,east=false,west=false,up=false,down=false": { "model": "wetrooms:block/marble_north_and_south", "uvlock": true },
+
+    "north=false,south=false,east=false,west=false,up=false,down=false": { "model": "wetrooms:block/marble_full", "uvlock": true },
+    "north=true,south=true,east=true,west=true,up=true,down=true": { "model": "wetrooms:block/marble_none", "uvlock": true }
+  }
+}
+

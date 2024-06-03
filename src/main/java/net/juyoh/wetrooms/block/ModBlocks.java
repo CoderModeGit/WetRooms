@@ -3,6 +3,7 @@ package net.juyoh.wetrooms.block;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.juyoh.wetrooms.WetRooms;
+import net.juyoh.wetrooms.block.custom.MarbleBlock;
 import net.juyoh.wetrooms.block.custom.MarbleManBlock;
 import net.juyoh.wetrooms.block.custom.VentBlock;
 import net.juyoh.wetrooms.sound.ModSounds;
@@ -40,7 +41,7 @@ public class ModBlocks {
             new MarbleManBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(ModSounds.WETROOMS_TILE_SOUNDS)));
     public static final Block QUARTZ_DOOR = registerBlock("quartz_door",
             new DoorBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS).dropsNothing().luminance(5), BlockSetType.OAK));
-    public static final Block SIDEWAYS_DOOR = registerBlock("sideways_door",
+    public static final Block SIDEWAYS_DOOR = registerBlock("sideways_door", //TODO Make new custom class for sideways door to add rotation
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
     public static final Block BLEACHED_DOOR = registerBlock("bleached_door",
             new DoorBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS), BlockSetType.IRON));
@@ -76,6 +77,8 @@ public class ModBlocks {
             new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).nonOpaque()));
     public static final Block RUBBER_SAPLING = registerBlock("rubber_sapling",
             new SaplingBlock(new RubberSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+    public static final Block MARBLE_BLOCK = registerBlock("marble_block",
+            new MarbleBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
     //public static final Block PLASTIC_CHAIR = registerBlock("plastic_chair",
     //        new ChairBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 

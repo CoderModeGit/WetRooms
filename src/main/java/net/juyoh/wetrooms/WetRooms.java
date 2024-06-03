@@ -74,7 +74,7 @@ public class WetRooms implements ModInitializer {
 				if (player.getWorld() == player.getServer().getOverworld()){
 					player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY).setBlockState(new BlockPos(0, 100, 0), Blocks.OBSIDIAN.getDefaultState());
 					HomeData.addHomePositionData((IEntityDataSaver) player, player.getBlockPos());
-					player.teleport(player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY), 0d, 110d, 0d, Set.of(), player.getYaw(), player.getPitch());
+					player.teleport(player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY), 0.5d, 110d, 0.5d, Set.of(), player.getYaw(), player.getPitch());
 
 				} else {
 					//player.moveToWorld(player.getServer().getOverworld());
@@ -82,21 +82,21 @@ public class WetRooms implements ModInitializer {
 					//player.sendMessage(Text.literal(HomeBlockPos.toString()));
 
 					player.getServer().getOverworld().breakBlock(HomeBlockPos, false);
-					player.teleport(player.getServer().getOverworld(), HomeBlockPos.getX(), HomeBlockPos.getY(), HomeBlockPos.getZ(), Set.of(), player.getYaw(), player.getPitch());
+					player.teleport(player.getServer().getOverworld(), HomeBlockPos.getX() + 0.5, HomeBlockPos.getY() + 0.5, HomeBlockPos.getZ() + 0.5, Set.of(), player.getYaw(), player.getPitch());
 					//player.teleport(0, 80, 0);
 				}
 
 			} else if (player.getWorld().getBlockState(player.getBlockPos().east(1)).getBlock() == ModBlocks.QUARTZ_DOOR && player.getServer() != null) {
 				if (player.getWorld() == player.getServer().getOverworld()){
 					player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY).setBlockState(new BlockPos(0, 100, 0), Blocks.OBSIDIAN.getDefaultState());
-					HomeData.addHomePositionData((IEntityDataSaver) player, player.getBlockPos().west(1));
-					player.teleport(player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY), 0d, 110d, 0d, Set.of(), player.getYaw(), player.getPitch());
+					HomeData.addHomePositionData((IEntityDataSaver) player, player.getBlockPos().east(1));
+					player.teleport(player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY), 0.5d, 110d, 0.5d, Set.of(), player.getYaw(), player.getPitch());
 				} else {
 					//player.moveToWorld(player.getServer().getOverworld());
 					BlockPos HomeBlockPos = HomeData.getHomePositionData(((IEntityDataSaver) player));
 					//player.sendMessage(Text.literal(HomeBlockPos.toString()));
 					player.getServer().getOverworld().breakBlock(HomeBlockPos, false);
-					player.teleport(player.getServer().getOverworld(), HomeBlockPos.getX(), HomeBlockPos.getY(), HomeBlockPos.getZ(), Set.of(), player.getYaw(), player.getPitch());
+					player.teleport(player.getServer().getOverworld(), HomeBlockPos.getX() + 0.5, HomeBlockPos.getY() + 0.5, HomeBlockPos.getZ() + 0.5, Set.of(), player.getYaw(), player.getPitch());
 					//player.teleport(0, 80, 0);
 
 				}
