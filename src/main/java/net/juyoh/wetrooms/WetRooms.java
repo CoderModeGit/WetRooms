@@ -1,5 +1,6 @@
 package net.juyoh.wetrooms;
 
+import ladysnake.satin.api.event.ShaderEffectRenderCallback;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.Event;
@@ -40,9 +41,19 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Set;
 
+import static net.juyoh.wetrooms.WetRoomsClient.CRT_SHADER;
+
 public class WetRooms implements ModInitializer {
 	public static final String MOD_ID = "wetrooms";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+	public void UpdateCRT(PlayerEntity player) {
+		if (player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY) == player.getWorld()) {
+			WetRoomsClient.CRT_ON();
+		} else {
+			WetRoomsClient.CRT_OFF();
+		}
+	}
 
 	@Override
 	public void onInitialize() {
@@ -75,7 +86,7 @@ public class WetRooms implements ModInitializer {
 					player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY).setBlockState(new BlockPos(0, 100, 0), Blocks.OBSIDIAN.getDefaultState());
 					HomeData.addHomePositionData((IEntityDataSaver) player, player.getBlockPos());
 					player.teleport(player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY), 0.5d, 110d, 0.5d, Set.of(), player.getYaw(), player.getPitch());
-
+					UpdateCRT(player);
 				} else {
 					//player.moveToWorld(player.getServer().getOverworld());
 					BlockPos HomeBlockPos = HomeData.getHomePositionData(((IEntityDataSaver) player));
@@ -84,6 +95,7 @@ public class WetRooms implements ModInitializer {
 					player.getServer().getOverworld().breakBlock(HomeBlockPos, false);
 					player.teleport(player.getServer().getOverworld(), HomeBlockPos.getX() + 0.5, HomeBlockPos.getY() + 0.5, HomeBlockPos.getZ() + 0.5, Set.of(), player.getYaw(), player.getPitch());
 					//player.teleport(0, 80, 0);
+					UpdateCRT(player);
 				}
 
 			} else if (player.getWorld().getBlockState(player.getBlockPos().east(1)).getBlock() == ModBlocks.QUARTZ_DOOR && player.getServer() != null) {
@@ -91,6 +103,7 @@ public class WetRooms implements ModInitializer {
 					player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY).setBlockState(new BlockPos(0, 100, 0), Blocks.OBSIDIAN.getDefaultState());
 					HomeData.addHomePositionData((IEntityDataSaver) player, player.getBlockPos().east(1));
 					player.teleport(player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY), 0.5d, 110d, 0.5d, Set.of(), player.getYaw(), player.getPitch());
+					UpdateCRT(player);
 				} else {
 					//player.moveToWorld(player.getServer().getOverworld());
 					BlockPos HomeBlockPos = HomeData.getHomePositionData(((IEntityDataSaver) player));
@@ -98,6 +111,7 @@ public class WetRooms implements ModInitializer {
 					player.getServer().getOverworld().breakBlock(HomeBlockPos, false);
 					player.teleport(player.getServer().getOverworld(), HomeBlockPos.getX() + 0.5, HomeBlockPos.getY() + 0.5, HomeBlockPos.getZ() + 0.5, Set.of(), player.getYaw(), player.getPitch());
 					//player.teleport(0, 80, 0);
+					UpdateCRT(player);
 
 				}
 			}
@@ -113,4 +127,5 @@ public class WetRooms implements ModInitializer {
 
 
 	}
+
 }

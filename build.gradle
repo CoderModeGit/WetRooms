@@ -20,6 +20,13 @@ repositories {
 		// name = "Terraformers"
 		// url = "https://maven.terraformersmc.com/"
 	// }
+	maven {
+		name = 'Ladysnake Mods'
+		url = 'https://maven.ladysnake.org/releases'
+		content {
+			includeGroup 'org.ladysnake'
+		}
+	}
 }
 
 fabricApi {
@@ -59,7 +66,9 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	// modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}")
-	
+	modImplementation "org.ladysnake:satin:${satin_version}"
+	// Include Satin as a Jar-in-Jar dependency (optional)
+	include "org.ladysnake:satin:${satin_version}"
 }
 
 processResources {

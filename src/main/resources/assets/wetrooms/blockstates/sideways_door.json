@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model": "wetrooms:block/sideways_door"},
+    "facing=east": {"model": "wetrooms:block/sideways_door", "y": 90},
+    "facing=south": {"model": "wetrooms:block/sideways_door", "y": 180},
+    "facing=west": {"model": "wetrooms:block/sideways_door", "y": 270}
+  }
+}

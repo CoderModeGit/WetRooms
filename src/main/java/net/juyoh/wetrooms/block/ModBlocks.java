@@ -3,6 +3,7 @@ package net.juyoh.wetrooms.block;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.juyoh.wetrooms.WetRooms;
+import net.juyoh.wetrooms.block.custom.HorizontalDoorBlock;
 import net.juyoh.wetrooms.block.custom.MarbleBlock;
 import net.juyoh.wetrooms.block.custom.MarbleManBlock;
 import net.juyoh.wetrooms.block.custom.VentBlock;
@@ -41,8 +42,8 @@ public class ModBlocks {
             new MarbleManBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(ModSounds.WETROOMS_TILE_SOUNDS)));
     public static final Block QUARTZ_DOOR = registerBlock("quartz_door",
             new DoorBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS).dropsNothing().luminance(5), BlockSetType.OAK));
-    public static final Block SIDEWAYS_DOOR = registerBlock("sideways_door", //TODO Make new custom class for sideways door to add rotation
-            new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+    public static final Block SIDEWAYS_DOOR = registerBlock("sideways_door",
+            new HorizontalDoorBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
     public static final Block BLEACHED_DOOR = registerBlock("bleached_door",
             new DoorBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS), BlockSetType.IRON));
     public static final Block METAL_RAILING = registerBlock("metal_railing",
