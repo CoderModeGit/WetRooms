@@ -3,10 +3,7 @@ package net.juyoh.wetrooms.block;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.juyoh.wetrooms.WetRooms;
-import net.juyoh.wetrooms.block.custom.HorizontalDoorBlock;
-import net.juyoh.wetrooms.block.custom.MarbleBlock;
-import net.juyoh.wetrooms.block.custom.MarbleManBlock;
-import net.juyoh.wetrooms.block.custom.VentBlock;
+import net.juyoh.wetrooms.block.custom.*;
 import net.juyoh.wetrooms.sound.ModSounds;
 import net.juyoh.wetrooms.world.tree.RubberSaplingGenerator;
 import net.minecraft.block.*;
@@ -16,6 +13,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.core.util.Clock;
+import org.spongepowered.asm.mixin.Final;
 
 public class ModBlocks {
     public static final Block BLEACHED_TILES = registerBlock("bleached_tiles",
@@ -44,6 +42,8 @@ public class ModBlocks {
             new DoorBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS).dropsNothing().luminance(5), BlockSetType.OAK));
     public static final Block SIDEWAYS_DOOR = registerBlock("sideways_door",
             new HorizontalDoorBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+    public static final Block TRIGGER_BLOCK = registerBlock("trigger_block",
+            new TriggerBlock(FabricBlockSettings.copyOf(Blocks.LIGHT).luminance(0).noCollision()));
     public static final Block BLEACHED_DOOR = registerBlock("bleached_door",
             new DoorBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS), BlockSetType.IRON));
     public static final Block METAL_RAILING = registerBlock("metal_railing",

@@ -8,5 +8,24 @@
       "wetrooms:tile4",
       "wetrooms:tile5"
     ]
+  },
+  "rinse": {
+    "subtitle": "sounds.wetrooms.rinse",
+    "sounds": [
+      "wetrooms:rinse"
+    ]
+  },
+  "wading": {
+    "subtitle": "sounds.wetrooms.wading",
+    "sounds": [
+      "wetrooms:water_step1",
+      "wetrooms:water_step2",
+      "wetrooms:water_step3",
+      "wetrooms:water_step4",
+      "wetrooms:water_step5",
+      "wetrooms:water_step6",
+      "wetrooms:water_step7",
+      "wetrooms:water_step8"
+    ]
   }
 }

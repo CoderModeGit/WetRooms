@@ -12,7 +12,9 @@ public class ModSounds {
 
 
     public static final SoundEvent WETROOMS_TILES_STEP = registerSoundEvent("wetrooms_tiles_step");
+    public static final SoundEvent WETROOMS_RINSE = registerSoundEvent("rinse");
     public static final SoundEvent WETROOMS_WATER_AMBIENT = registerSoundEvent("water_ambience");
+    public static final SoundEvent LOUDER_WADING = registerSoundEvent("wading");
 
     public static final BlockSoundGroup WETROOMS_TILE_SOUNDS = new BlockSoundGroup(2f, 1f, SoundEvents.BLOCK_METAL_BREAK, ModSounds.WETROOMS_TILES_STEP, SoundEvents.BLOCK_METAL_PLACE, SoundEvents.BLOCK_METAL_HIT, ModSounds.WETROOMS_TILES_STEP);
     private static SoundEvent registerSoundEvent(String name) {

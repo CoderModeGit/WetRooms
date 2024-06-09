@@ -55,12 +55,12 @@ void main() {
     float InnerSine = ScanCoord.y * InSize.y * ScanlineScale * 0.25;
     float ScanBrightMod = sin(InnerSine * Pi + ScanlineOffset * InSize.y * 0.25);
     float ScanBrightness = mix(1.0, (pow(ScanBrightMod * ScanBrightMod, ScanlineHeight) * ScanlineBrightScale + 1.0) * 0.5, ScanlineAmount);
-    vec3 ScanlineTexel = InTexel.rgb * ScanBrightness;
+    vec3 ScanlineTexel = InTexel.rgb;
 
     // -- Color Compression (increasing the floor of the signal without affecting the ceiling) --
-    ScanlineTexel = Floor + (One.xyz - Floor) * ScanlineTexel;
+    //ScanlineTexel = Floor + (One.xyz - Floor) * ScanlineTexel;
 
-    ScanlineTexel.rgb = pow(ScanlineTexel.rgb, Power);
+    //ScanlineTexel.rgb = pow(ScanlineTexel.rgb, Power);
 
     fragColor = vec4(ScanlineTexel.rgb, 1.0);
 }

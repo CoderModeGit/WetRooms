@@ -38,5 +38,7 @@
   "block.wetrooms.rubber_leaves": "Rubber Leaves",
   "block.wetrooms.rubber_sapling": "Rubber Sapling",
 
-  "sounds.wetrooms.tile_footstep": "Loud Footsteps"
+  "sounds.wetrooms.tile_footstep": "Loud Footsteps",
+  "sounds.wetrooms.wading": "Wading",
+  "sounds.wetrooms.rinse": "Experiencing"
 }

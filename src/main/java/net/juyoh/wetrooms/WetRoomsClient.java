@@ -7,6 +7,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.juyoh.wetrooms.block.ModBlocks;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.network.ClientConnection;
 import net.minecraft.util.Identifier;
 
 
@@ -14,7 +15,7 @@ public class WetRoomsClient implements ClientModInitializer{
 
         public static final ManagedShaderEffect CRT_SHADER = ShaderEffectManager.getInstance()
                 .manage(new Identifier("minecraft", "shaders/post/scan_pincushion.json"));
-        private static boolean enabled = true;  // can be disabled whenever you want
+        private static boolean enabled = false;  // can be disabled whenever you want
 
         public static void CRT_ON() {
             enabled = true;
@@ -36,5 +37,6 @@ public class WetRoomsClient implements ClientModInitializer{
             BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RUBBER_LEAVES, RenderLayer.getCutout());
             BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RUBBER_SAPLING, RenderLayer.getCutout());
         }
+
 
 }
