@@ -60,6 +60,7 @@ public class MarbleBlock extends Block {
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         updateState(world, pos);
     }
+
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(UP, DOWN, NORTH, SOUTH, EAST, WEST);

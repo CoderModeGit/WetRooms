@@ -1,5 +1,6 @@
 package net.juyoh.wetrooms.mixin;
 
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.juyoh.wetrooms.WetRooms;
 import net.juyoh.wetrooms.event.PlayerWalkCallback;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(PlayerEntity.class)
 public class PlayerWalkMixin {
     @Inject(method = "playStepSound", at = @At("HEAD"))
-    private void playStepSound(CallbackInfo ci) {
+    private void playStepSound(CallbackInfo ci) throws CommandSyntaxException {
         ActionResult result = PlayerWalkCallback.EVENT.invoker().interact((PlayerEntity)(Object)this);
         if (result == ActionResult.FAIL) {
             // Cancel the player's movement

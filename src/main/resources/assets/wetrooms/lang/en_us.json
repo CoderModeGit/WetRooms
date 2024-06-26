@@ -40,5 +40,8 @@
 
   "sounds.wetrooms.tile_footstep": "Loud Footsteps",
   "sounds.wetrooms.wading": "Wading",
-  "sounds.wetrooms.rinse": "Experiencing"
+  "sounds.wetrooms.rinse": "Experiencing",
+  "sounds.wetrooms.train": "Acknowledging",
+  "sounds.wetrooms.buildup": "Knowing",
+  "sounds.wetrooms.wave": "Creating"
 }

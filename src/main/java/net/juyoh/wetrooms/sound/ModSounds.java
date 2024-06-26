@@ -13,6 +13,9 @@ public class ModSounds {
 
     public static final SoundEvent WETROOMS_TILES_STEP = registerSoundEvent("wetrooms_tiles_step");
     public static final SoundEvent WETROOMS_RINSE = registerSoundEvent("rinse");
+    public static final SoundEvent WETROOMS_TRAIN = registerSoundEvent("train");
+    public static final SoundEvent WETROOMS_BUILDUP = registerSoundEvent("buildup");
+    public static final SoundEvent WETROOMS_WAVE = registerSoundEvent("wave");
     public static final SoundEvent WETROOMS_WATER_AMBIENT = registerSoundEvent("water_ambience");
     public static final SoundEvent LOUDER_WADING = registerSoundEvent("wading");
 

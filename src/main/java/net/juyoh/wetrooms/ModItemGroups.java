@@ -55,6 +55,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RUBBER_SAPLING);
                         entries.add(ModItems.LATEX_BUCKET);
                         entries.add(ModBlocks.MARBLE_MAN);
+
+                        entries.add(ModBlocks.TRIGGER_BLOCK);
                     }).build());
     public static void registerItemGroups() {
         WetRooms.LOGGER.info("Registering item tabs for " + WetRooms.MOD_ID);

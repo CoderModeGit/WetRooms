@@ -15,6 +15,24 @@
       "wetrooms:rinse"
     ]
   },
+  "train": {
+    "subtitle": "sounds.wetrooms.train",
+    "sounds": [
+      "wetrooms:train_horn"
+    ]
+  },
+  "buildup": {
+    "subtitle": "sounds.wetrooms.buildup",
+    "sounds": [
+      "wetrooms:buildup"
+    ]
+  },
+  "wave": {
+    "subtitle": "sounds.wetrooms.wave",
+    "sounds": [
+      "wetrooms:wave"
+    ]
+  },
   "wading": {
     "subtitle": "sounds.wetrooms.wading",
     "sounds": [

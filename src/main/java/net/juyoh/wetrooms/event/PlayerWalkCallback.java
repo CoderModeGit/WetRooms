@@ -1,5 +1,6 @@
 package net.juyoh.wetrooms.event;
 
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
 import net.juyoh.wetrooms.WetRooms;
@@ -20,7 +21,7 @@ public interface PlayerWalkCallback {
                 return ActionResult.PASS;
             });
 
-    ActionResult interact(PlayerEntity player);
+    ActionResult interact(PlayerEntity player) throws CommandSyntaxException;
 
 
 }
