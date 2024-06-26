@@ -78,6 +78,7 @@ public class WetRooms implements ModInitializer {
 		ChunkGenerator chunkGenerator = serverWorld.getChunkManager().getChunkGenerator();
 		StructureStart structureStart = structure2.createStructureStart(serverWorld.getRegistryManager(), chunkGenerator, chunkGenerator.getBiomeSource(), serverWorld.getChunkManager().getNoiseConfig(), serverWorld.getStructureTemplateManager(), serverWorld.getSeed(), new ChunkPos(new BlockPos(0, 0, 0)), 0, serverWorld, biome -> true);
 		BlockBox blockBox = structureStart.getBoundingBox();
+
 		ChunkPos chunkPos = new ChunkPos(ChunkSectionPos.getSectionCoord(blockBox.getMinX()), ChunkSectionPos.getSectionCoord(blockBox.getMinZ()));
 		ChunkPos chunkPos2 = new ChunkPos(ChunkSectionPos.getSectionCoord(blockBox.getMaxX()), ChunkSectionPos.getSectionCoord(blockBox.getMaxZ()));
 		ChunkPos.stream(chunkPos, chunkPos2).forEach(chunkPosx -> {
