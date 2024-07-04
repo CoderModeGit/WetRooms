@@ -7,6 +7,9 @@ import net.juyoh.wetrooms.WetRooms;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResult;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+
 public interface PlayerWalkCallback {
 
     Event<PlayerWalkCallback> EVENT = EventFactory.createArrayBacked(PlayerWalkCallback.class,
@@ -21,7 +24,7 @@ public interface PlayerWalkCallback {
                 return ActionResult.PASS;
             });
 
-    ActionResult interact(PlayerEntity player) throws CommandSyntaxException;
+    ActionResult interact(PlayerEntity player) throws CommandSyntaxException, IOException, URISyntaxException;
 
 
 }

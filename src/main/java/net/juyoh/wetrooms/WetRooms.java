@@ -8,6 +8,9 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.juyoh.wetrooms.block.ModBlocks;
+import net.juyoh.wetrooms.camera.StartingCutscene;
+import net.juyoh.wetrooms.effect.CutsceneP1Effect;
+import net.juyoh.wetrooms.effect.CutsceneP2Effect;
 import net.juyoh.wetrooms.effect.WetShoesEffect;
 import net.juyoh.wetrooms.entity.custom.PuddleEntity;
 import net.juyoh.wetrooms.event.PlayerJoinCallback;
@@ -18,6 +21,7 @@ import net.juyoh.wetrooms.sound.ModSounds;
 import net.juyoh.wetrooms.util.HomeData;
 import net.juyoh.wetrooms.util.IEntityDataSaver;
 import net.juyoh.wetrooms.world.biome.ModBiomes;
+import net.juyoh.wetrooms.world.dimension.CopyWetrooms;
 import net.juyoh.wetrooms.world.dimension.ModDimensions;
 import net.juyoh.wetrooms.world.gen.ModWorldGeneration;
 import net.minecraft.block.Block;
@@ -38,6 +42,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.*;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.server.command.FillBiomeCommand;
 import net.minecraft.server.command.PlaceCommand;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -58,12 +63,13 @@ import org.slf4j.LoggerFactory;
 import javax.swing.undo.CompoundEdit;
 import java.util.Map;
 import java.util.Set;
-
 public class WetRooms implements ModInitializer {
 	public static final String MOD_ID = "wetrooms";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public static final StatusEffect WETSHOES = new WetShoesEffect();
+	public static final StatusEffect CUTSCENEP1 = new CutsceneP1Effect();
+	public static final StatusEffect CUTSCENEP2 = new CutsceneP2Effect();
 
 	public void UpdateCRT(PlayerEntity player) {
 		if (player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY) == player.getWorld()) {
@@ -72,18 +78,12 @@ public class WetRooms implements ModInitializer {
 			WetRoomsClient.CRT_OFF();
 		}
 	}
-	public void PlaceStructure(ServerWorld serverWorld) {
-		RegistryEntry.Reference<Structure> structureRegistryEntry = serverWorld.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY).getRegistryManager().get(RegistryKeys.STRUCTURE).getEntry(RegistryKey.of(RegistryKeys.STRUCTURE, new Identifier(MOD_ID, "wetrooms_structure"))).get();
-		Structure structure2 = structureRegistryEntry.value();
-		ChunkGenerator chunkGenerator = serverWorld.getChunkManager().getChunkGenerator();
-		StructureStart structureStart = structure2.createStructureStart(serverWorld.getRegistryManager(), chunkGenerator, chunkGenerator.getBiomeSource(), serverWorld.getChunkManager().getNoiseConfig(), serverWorld.getStructureTemplateManager(), serverWorld.getSeed(), new ChunkPos(new BlockPos(0, 0, 0)), 0, serverWorld, biome -> true);
-		BlockBox blockBox = structureStart.getBoundingBox();
+	public void ChangeWater(ServerWorld serverWorld, BlockPos origin) {
+		//BlockPos corner1 = origin.north(3).west(3);
+		//BlockPos corner2 = origin.south(3).east(3);
 
-		ChunkPos chunkPos = new ChunkPos(ChunkSectionPos.getSectionCoord(blockBox.getMinX()), ChunkSectionPos.getSectionCoord(blockBox.getMinZ()));
-		ChunkPos chunkPos2 = new ChunkPos(ChunkSectionPos.getSectionCoord(blockBox.getMaxX()), ChunkSectionPos.getSectionCoord(blockBox.getMaxZ()));
-		ChunkPos.stream(chunkPos, chunkPos2).forEach(chunkPosx -> {
-			structureStart.place(serverWorld, serverWorld.getStructureAccessor(), chunkGenerator, serverWorld.getRandom(), new BlockBox(chunkPosx.getStartX(),serverWorld.getBottomY(), chunkPosx.getStartZ(), chunkPosx.getEndX(), serverWorld.getTopY(), chunkPosx.getEndZ()), chunkPosx);
-		});
+		//ServerCommandSource commandSource = serverWorld.getServer().getCommandSource();
+		//FillBiomeCommand.execute()
 
 
 	}
@@ -118,8 +118,9 @@ public class WetRooms implements ModInitializer {
 
 
 
-
 		Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "wet_shoes"), WETSHOES);
+		Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "cut1"), CUTSCENEP1);
+		Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "cut2"), CUTSCENEP2);
 
 		RightClickBlockHandler.EVENT.register(new RightClickBlockHandler());
 
@@ -134,13 +135,10 @@ public class WetRooms implements ModInitializer {
 				//player.sendMessage(Text.literal(player.getWorld().toString()));
 				if (player.getWorld() == player.getServer().getOverworld()){
 					HomeData.addHomePositionData((IEntityDataSaver) player, player.getBlockPos());
-					player.teleport(player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY), 6.5d, 28d, 1.5d, Set.of(), player.getYaw(), player.getPitch());
-					UpdateCRT(player);
-					player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 99999999, 128, Boolean.TRUE, Boolean.FALSE, Boolean.FALSE));
-
-					if (player.getServer() != null && player.getWorld().getBlockState(new BlockPos(2, 26, -6)).getBlock() == Blocks.AIR){
-						PlaceStructure(player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY));
-					}
+					//player.teleport(player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY), 6.5d, 28d, 1.5d, Set.of(), player.getYaw(), player.getPitch());
+					//UpdateCRT(player);
+					//player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 99999999, 128, Boolean.TRUE, Boolean.FALSE, Boolean.FALSE));
+					StartingCutscene.Start(player);
 
 
 				} else {
@@ -164,14 +162,12 @@ public class WetRooms implements ModInitializer {
 			} else if (player.getWorld().getBlockState(player.getBlockPos().east(1)).getBlock() == ModBlocks.QUARTZ_DOOR && player.getServer() != null) {
 				if (player.getWorld() == player.getServer().getOverworld()){
 					HomeData.addHomePositionData((IEntityDataSaver) player, player.getBlockPos().east(1));
-					player.teleport(player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY), -0.5d, 28d, -6.5d, Set.of(), player.getYaw(), player.getPitch());
-					UpdateCRT(player);
-					player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 99999999, 128, Boolean.TRUE, Boolean.FALSE, Boolean.FALSE));
+					//player.teleport(player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY), 6.5d, 28d, 1.5d, Set.of(), player.getYaw(), player.getPitch());
+					//UpdateCRT(player);
+					//player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 99999999, 128, Boolean.TRUE, Boolean.FALSE, Boolean.FALSE));
 
-					if (player.getServer() != null && player.getWorld().getBlockState(new BlockPos(2, 26, -6)).getBlock() == Blocks.AIR){
-						PlaceStructure(player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY));
-					}
-
+					//StartingCutscene.Start(player);
+					CopyWetrooms.copyRegionToWorld(player.getServer());
 
 
 
@@ -207,7 +203,6 @@ public class WetRooms implements ModInitializer {
 					player.getWorld().addBlockBreakParticles(player.getBlockPos().up(1).south(), Blocks.GRAY_WOOL.getDefaultState());
 					player.getWorld().addBlockBreakParticles(player.getBlockPos().up(1).west(), Blocks.GRAY_WOOL.getDefaultState());
 					if (player.getServer() != null) {
-						PlaceStructure(player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY));
 						//RegistryEntry.Reference<Structure> structureRegistryEntry = player.getServer().getWorld(ModDimensions.WETROOMS_LEVEL_KEY).getRegistryManager().get(RegistryKeys.STRUCTURE).getEntry(RegistryKey.of(RegistryKeys.STRUCTURE, new Identifier(MOD_ID, "wetrooms_structure"))).get();
 						//ServerCommandSource commandSource = player.getServer().getCommandSource();
 						//PlaceCommand.executePlaceStructure(commandSource,  structureRegistryEntry, new BlockPos(200, 200, 200));
@@ -223,7 +218,6 @@ public class WetRooms implements ModInitializer {
 			if (player.getWorld().getBlockState(player.getBlockPos()).getBlock() == Blocks.WATER && player.getWorld().getBiome(player.getBlockPos()).getKey().get() == ModBiomes.WETROOMS_BIOME) {
 				//Rinse effect
 				player.playSound(ModSounds.LOUDER_WADING, 0.6f ,0.6f);
-				player.addStatusEffect(new StatusEffectInstance(WETSHOES, 160, 1, Boolean.TRUE, Boolean.FALSE, Boolean.FALSE));
 			}
 
 			if (player.hasStatusEffect(WETSHOES) && (player.getWorld().getBlockState(player.getBlockPos()).getBlock() != Blocks.WATER)) {
@@ -232,6 +226,8 @@ public class WetRooms implements ModInitializer {
 				player.getWorld().spawnEntity(puddle);
 			}
 
+			if ((player.getWorld().getBlockState(new BlockPos(1, 21, -6)).getBlock() == ModBlocks.LOGO) && player.getPitch() < -28)
+				player.getWorld().setBlockState(new BlockPos(1, 21, -6), Blocks.AIR.getDefaultState());
 
 
 

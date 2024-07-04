@@ -23,7 +23,7 @@ public class ModBlocks {
     public static final Block SOLID_METAL = registerBlock("solid_metal",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
     public static final Block UNNATURAL_LIGHT = registerBlock("unnatural_light",
-            new Block(FabricBlockSettings.copyOf(Blocks.GLOWSTONE).mapColor(MapColor.WHITE).luminance(16)));
+            new UnnaturalLightBlock(FabricBlockSettings.copyOf(Blocks.GLOWSTONE).mapColor(MapColor.WHITE).luminance(16)));
     public static final Block BLEACHED_TILES_STAIRS = registerBlock("bleached_tiles_stairs",
             new StairsBlock(ModBlocks.BLEACHED_TILES.getDefaultState(), FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS).sounds(ModSounds.WETROOMS_TILE_SOUNDS)));
     public static final Block OBSIDIAN_TILES_STAIRS = registerBlock("obsidian_tiles_stairs",
@@ -82,6 +82,8 @@ public class ModBlocks {
             new MarbleBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
     //public static final Block PLASTIC_CHAIR = registerBlock("plastic_chair",
     //        new ChairBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
+    public static final Block LOGO = registerBlock("logo",
+            new Block(FabricBlockSettings.copyOf(ModBlocks.BLEACHED_TILES).noCollision().replaceable()));
 
 
 
