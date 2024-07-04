@@ -46,7 +46,6 @@ public class WetRoomsClient implements ClientModInitializer{
             WetRooms.LOGGER.info("client init");
             BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RUBBER_LEAVES, RenderLayer.getCutout());
             BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RUBBER_SAPLING, RenderLayer.getCutout());
-            BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LOGO, RenderLayer.getCutout());
 
             EntityRendererRegistry.register(WetRooms.PUDDLE, PuddleRenderer::new);
             EntityModelLayerRegistry.registerModelLayer(ModModelLayers.PUDDLE, PuddleModel::getTexturedModelData);

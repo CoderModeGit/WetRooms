@@ -12,13 +12,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-
 @Mixin(PlayerEntity.class)
 public class PlayerWalkMixin {
     @Inject(method = "playStepSound", at = @At("HEAD"))
-    private void playStepSound(CallbackInfo ci) throws CommandSyntaxException, IOException, URISyntaxException {
+    private void playStepSound(CallbackInfo ci) throws CommandSyntaxException {
         ActionResult result = PlayerWalkCallback.EVENT.invoker().interact((PlayerEntity)(Object)this);
         if (result == ActionResult.FAIL) {
             // Cancel the player's movement

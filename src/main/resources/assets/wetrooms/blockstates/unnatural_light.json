@@ -1,9 +1,0 @@
-{
-  "variants": {
-    "facing=north": { "model": "wetrooms:block/unnatural_light", "uvlock": true },
-    "facing=east":  { "model": "wetrooms:block/unnatural_light", "uvlock": true, "y": 90},
-    "facing=south": { "model": "wetrooms:block/unnatural_light", "uvlock": true, "y": 180 },
-    "facing=west":  { "model": "wetrooms:block/unnatural_light", "uvlock": true, "y": 270 }
-  }
-}
-

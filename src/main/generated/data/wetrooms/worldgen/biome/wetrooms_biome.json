@@ -11,5 +11,7 @@
   "spawners": {},
   "spawn_costs": {},
   "carvers": {},
-  "features": []
+  "features": [
+    "minecraft:void_start_platform"
+  ]
 }
